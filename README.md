@@ -1,5 +1,9 @@
 # JUNE 14TH - Active Record Lecture No. 1
 
+## NOTE - Tables plural, Models - singular
+
+### Extra note, in ruby: trivia and data (plural) => trivium, datum (singular)
+
 ### our gemfile
 
 ```Ruby
@@ -34,12 +38,11 @@ task :hello do
 end
 ```
 
-
 ### Run these commands
-``` rake db:create_migration NAME=create_pokemons ```
 
+`rake db:create_migration NAME=create_pokemons`
 
-### Migration file
+### Pokemon Migration file
 
 ```Ruby
 class CreatePokemon < ActiveRecord::Migraton
@@ -56,4 +59,59 @@ end
 ```
 
 ### Run these commands
-``` rake db:mgrate ```
+
+`rake db:mgrate`
+
+## Trainers
+
+### Run these commands
+
+`rake db:create_migration NAME=trainers`
+
+### Trainer Migration file
+
+```Ruby
+class CreateTrainers < ActiveRecord::Migraton
+    def change
+        create_table :trainers do |table|
+            table.string "name"
+            table.integer :badge_count
+        end
+    end
+end
+
+```
+
+### Run these commands
+
+`rake db:mgrate`
+
+### Run these commands
+
+`rake db:create_migration NAME=trainers`
+
+### Trainer - Pokemon Migration file
+
+```Ruby
+class CreateTrainers < ActiveRecord::Migraton
+    def change
+        create_table :trainers do |table|
+            table.string "name"
+            table.integer :badge_count
+        end
+    end
+end
+
+```
+
+### Run these commands
+
+`rake db:mgrate`
+
+Remember to create your models
+
+```
+models
+    |-pokemon.rb
+    |-traner.rb
+```
