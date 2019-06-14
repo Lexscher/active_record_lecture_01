@@ -21,14 +21,14 @@ gem 'pry'
 
 ```Ruby
 require 'bundler/setup'
-# require 'sinatra/activerecord/rake'
+require 'sinatra/activerecord/rake'
 
 task :console do
     ActiveRecord::Base.logger = Logger.new(STDOUT)
     pry.start
 end
 
-desc "says hi"
+desc "says 👋"
 task :hello do
     puts "suuuup"
 end
