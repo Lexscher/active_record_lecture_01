@@ -33,3 +33,27 @@ task :hello do
     puts "suuuup"
 end
 ```
+
+
+### Run these commands
+``` rake db:create_migration NAME=create_pokemons ```
+
+
+### Migration file
+
+```Ruby
+class CreatePokemon < ActiveRecord::Migraton
+    def change
+        create_table pokemons do |table|
+            table.string "name"
+            table.string "element_type"
+            table.integer "weight"
+            table.integer "level"
+        end
+    end
+end
+
+```
+
+### Run these commands
+``` rake db:mgrate ```
